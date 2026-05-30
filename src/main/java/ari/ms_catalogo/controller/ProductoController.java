@@ -76,10 +76,10 @@ public class ProductoController {
 
         return ResponseEntity.ok(productoService.save(prodActual));
     }
-    }
+
     //pa borrar
     @DeleteMapping("/{id}")
-    public ResponseEntity<Producto> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         try {
             productoService.delete(id);
             return ResponseEntity.noContent().build();//200
